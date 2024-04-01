@@ -1,5 +1,6 @@
 package com.example.FiltroSpringBoot.Persistence.Entity;
 
+import com.example.FiltroSpringBoot.Persistence.DTO.RegisterDTO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
@@ -64,6 +65,13 @@ public class Register {
         return "Register{" + "id=" + id + ", qualification=" + qualification + ", comment=" + comment + ", audioVisual=" + audioVisual + '}';
     }
     
-    
+    //DTO
+    public RegisterDTO toDTO(){
+        RegisterDTO registerDTO = new RegisterDTO();
+        registerDTO.setId(this.id);
+        registerDTO.setQualification(this.qualification);
+        registerDTO.setComment(this.comment);
+        return registerDTO;
+    }
 
 }

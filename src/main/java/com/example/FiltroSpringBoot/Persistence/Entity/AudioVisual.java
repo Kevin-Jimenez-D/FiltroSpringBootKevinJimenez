@@ -3,6 +3,7 @@ package com.example.FiltroSpringBoot.Persistence.Entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.FiltroSpringBoot.Persistence.DTO.AudioVisualDTO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
@@ -119,6 +120,19 @@ public class AudioVisual {
     @Override
     public String toString() {
         return "AudioVisual{" + "id=" + id + ", name=" + name + ", platform=" + platform + ", gender=" + gender + ", stateVisualization=" + stateVisualization + ", registers=" + registers + ", costumers=" + costumers + '}';
+    }
+
+    //DTO es la forma en que queremos mostrar las cosas
+    //Las llaves foraneas son las que tienen null
+    //DTO
+    public AudioVisualDTO toDTO(){
+        AudioVisualDTO audioVisualDTO = new AudioVisualDTO();
+        audioVisualDTO.setId(this.id);
+        audioVisualDTO.setName(this.name);
+        audioVisualDTO.setPlatform_ID(this.platform.getId());
+        audioVisualDTO.setGender_ID(this.gender.getId());
+        audioVisualDTO.setStateVisualization_ID(this.stateVisualization.getId());
+        return audioVisualDTO;
     }
     
 

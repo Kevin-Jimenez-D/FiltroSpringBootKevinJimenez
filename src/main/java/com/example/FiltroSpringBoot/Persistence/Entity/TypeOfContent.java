@@ -2,6 +2,8 @@ package com.example.FiltroSpringBoot.Persistence.Entity;
 
 import java.util.List;
 
+import com.example.FiltroSpringBoot.Persistence.DTO.TypeOfContentDTO;
+
 import jakarta.persistence.*;
 
 //Ready
@@ -51,5 +53,12 @@ public class TypeOfContent {
         return "TypeOfContent{" + "id=" + id + ", name=" + name + ", platforms=" + platforms + '}';
     }
     
+    //DTO
+    public TypeOfContentDTO toDTO(){
+        TypeOfContentDTO typeOfContentDTO = new TypeOfContentDTO();
+        typeOfContentDTO.setId(this.id);
+        typeOfContentDTO.setName(this.name);
+        return typeOfContentDTO;
+    }
     
 }

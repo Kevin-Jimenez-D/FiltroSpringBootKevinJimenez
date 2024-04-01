@@ -2,6 +2,7 @@ package com.example.FiltroSpringBoot.Persistence.Entity;
 
 import java.util.List;
 
+import com.example.FiltroSpringBoot.Persistence.DTO.PlatformDTO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
@@ -67,6 +68,13 @@ public class Platform {
         return "Platform{" + "id=" + id + ", name=" + name + ", typeOfContent=" + typeOfContent + ", audioVisuals=" + audioVisuals + '}';
     }
     
+    //DTO
+    public PlatformDTO toDTO(){
+        PlatformDTO platformDTO = new PlatformDTO();
+        platformDTO.setId(this.id);
+        platformDTO.setName(this.name);
+        return platformDTO;
+    }
     
 
 }

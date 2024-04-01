@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
+import com.example.FiltroSpringBoot.Persistence.DTO.CostumerDTO;
+
 //Ready
 @Entity
 @Table(name="Costumer")
@@ -82,6 +84,17 @@ public class Costumer {
     @Override
     public String toString() {
         return "Costumer{" + "id=" + id + ", firstName=" + firstName + ", secondName=" + secondName + ", firstLastName=" + firstLastName + ", secondLastName=" + secondLastName + ", audioVisuals=" + audioVisuals + '}';
+    }
+
+    //DTO
+    public CostumerDTO toDTO(){
+        CostumerDTO costumerDTO = new CostumerDTO();
+        costumerDTO.setId(this.id);
+        costumerDTO.setFirstName(this.firstName);
+        costumerDTO.setSecondName(this.secondName);
+        costumerDTO.setFirstLastName(this.firstLastName);
+        costumerDTO.setSecondLastName(this.secondLastName);
+        return costumerDTO;
     }
     
     

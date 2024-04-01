@@ -2,6 +2,8 @@ package com.example.FiltroSpringBoot.Persistence.Entity;
 
 import java.util.List;
 
+import com.example.FiltroSpringBoot.Persistence.DTO.StateVisualizationDTO;
+
 import jakarta.persistence.*;
 
 //Ready
@@ -51,6 +53,12 @@ public class StateVisualization {
         return "StateVisualization{" + "id=" + id + ", stateVisualization=" + stateVisualization + ", audioVisuals=" + audioVisuals + '}';
     }
     
-    
+    //DTO
+    public StateVisualizationDTO toDTO(){
+        StateVisualizationDTO stateVisualizationDTO = new StateVisualizationDTO();
+        stateVisualizationDTO.setId(this.id);
+        stateVisualizationDTO.setStateVisualization(this.stateVisualization);
+        return stateVisualizationDTO;
+    }
 
 }

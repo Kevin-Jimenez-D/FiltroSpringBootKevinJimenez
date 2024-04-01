@@ -2,6 +2,8 @@ package com.example.FiltroSpringBoot.Persistence.Entity;
 
 import java.util.List;
 
+import com.example.FiltroSpringBoot.Persistence.DTO.GenderDTO;
+
 import jakarta.persistence.*;
 
 //Ready
@@ -49,6 +51,14 @@ public class Gender {
     @Override
     public String toString() {
         return "Gender{" + "id=" + id + ", gender=" + gender + ", audioVisuals=" + audioVisuals + '}';
+    }
+
+    //DTO
+    public GenderDTO toDTO(){
+        GenderDTO genderDTO = new GenderDTO();
+        genderDTO.setId(this.id);
+        genderDTO.setGender(this.gender);
+        return genderDTO;
     }
     
     
