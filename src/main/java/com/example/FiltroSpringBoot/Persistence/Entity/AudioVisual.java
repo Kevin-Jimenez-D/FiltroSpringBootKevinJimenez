@@ -21,17 +21,17 @@ public class AudioVisual {
     private String name;
 
     //3 llaves foraneas
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "platform_ID")
     @JsonIgnore
     private Platform platform;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "gender_ID")
     @JsonIgnore
     private Gender gender;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "stateVisualization_ID")
     @JsonIgnore
     private StateVisualization stateVisualization;

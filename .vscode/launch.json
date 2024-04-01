@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-FiltroSpringBootApplication<FiltroSpringBoot>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.FiltroSpringBoot.FiltroSpringBootApplication",
+            "projectName": "FiltroSpringBoot",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
