@@ -1,8 +1,7 @@
 # **Filter SpringBoot 👀**
 
 ## Main objective
-The project is to develop a dedicated api to support the operations of a company in the gardening industry. This software will cover several areas, including office and employee details, customer management, orders, products and payments.
-The main objective of the project is to develop software dedicated to backing up the operations of a company in the gardening sector.
+Build a REST API in Java for an application that allows managing a control and rating system for audiovisual content consumed by a user
 
 ## Technologies Used
 The project will utilize the following technologies in Backend:
@@ -16,7 +15,7 @@ The project will utilize the following technologies in Backend:
 - JPQL
 
 ## Database Design
-![Database Design](/src/main/resources/imagesDocumentation/)
+![Database Design](/src/main/resources/imagesDocumentation/DataBaseImage.png)
 
 ## Folder organization
 
