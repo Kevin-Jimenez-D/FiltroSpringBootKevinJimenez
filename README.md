@@ -61,6 +61,13 @@ The project will utilize the following technologies in Backend:
 ![Image Class Diagram](/src/main/resources/imagesDocumentation/)
 [Link Class Diagram](https://drive.google.com/file/d/1yUEvqN2FR11HFvS9v3SN6CfLrC8hgQ5e/view?usp=sharing)
 
+## Security
+![Register and create the Web Token](/src/main/resources/imagesDocumentation/RegisterSecurity.png)
+
+![Login and create the Web Token](/src/main/resources/imagesDocumentation/LoginSecurity.png)
+
+![Get Data with Web Token](/src/main/resources/imagesDocumentation/GetTypeOfData.png)
+
 # API endpoints
 
 ## With Insomnia
