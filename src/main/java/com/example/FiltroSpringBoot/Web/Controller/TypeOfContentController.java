@@ -10,7 +10,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.FiltroSpringBoot.Domain.Service.TypeOfContentService;
-import com.example.FiltroSpringBoot.Persistence.DTO.TypeOfContentDTO;
 import com.example.FiltroSpringBoot.Persistence.Entity.TypeOfContent;
 
 
@@ -27,6 +26,16 @@ public class TypeOfContentController {
     @GetMapping
     public List<TypeOfContent> findAllTypeOfContents() {
         return typeOfContentService.findAllTypeOfContents();
+    }
+
+    @GetMapping("/{name}")
+    public ResponseEntity<TypeOfContent> getTypeOfContentByName(@PathVariable String name) {
+        ResponseEntity<TypeOfContent> responseEntity = typeOfContentService.getTypeOfContentByName(name);
+        if (responseEntity.getBody() != null) {
+            return ResponseEntity.ok(responseEntity.getBody());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PostMapping("/save")

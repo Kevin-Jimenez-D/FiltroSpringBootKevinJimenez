@@ -32,9 +32,8 @@ public class TypeOfContentImpl implements TypeOfContentService {
     public ResponseEntity<TypeOfContent> getTypeOfContentByName(String name) {
         // Aquí debes implementar la lógica para buscar por nombre
         // Por ejemplo:
-        // TypeOfContent typeOfContent = typeOfContentRepository.findByName(name);
-        // return typeOfContent != null ? ResponseEntity.ok(typeOfContent) : ResponseEntity.notFound().build();
-        throw new UnsupportedOperationException("Unimplemented method 'getTypeOfContentByName'");
+        TypeOfContent typeOfContent = typeOfContentRepository.findByName(name);
+        return typeOfContent != null ? ResponseEntity.ok(typeOfContent) : ResponseEntity.notFound().build();
     }
 
     @Override

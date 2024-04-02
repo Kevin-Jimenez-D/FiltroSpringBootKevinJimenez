@@ -9,5 +9,5 @@ import com.example.FiltroSpringBoot.Persistence.Entity.TypeOfContent;
 public interface TypeOfContentRepository extends JpaRepository<TypeOfContent, Long> {
 
     //Save, Select
-
+    TypeOfContent findByName(String name); // Agrega este método para buscar por nombre
 }
