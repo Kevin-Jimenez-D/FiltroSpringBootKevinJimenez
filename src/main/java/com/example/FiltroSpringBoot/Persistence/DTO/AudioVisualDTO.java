@@ -2,18 +2,18 @@ package com.example.FiltroSpringBoot.Persistence.DTO;
 
 public class AudioVisualDTO {
 
-    private String id;
+    private Long id; // Cambiado a Long para reflejar el tipo de dato autoincrementable
     private String name;
-    private String platform_ID;
-    private String gender_ID;
-    private String stateVisualization_ID;
+    private Long platform_ID; // Cambiado a Long para reflejar el tipo de dato autoincrementable
+    private Long gender_ID; // Cambiado a Long para reflejar el tipo de dato autoincrementable
+    private Long stateVisualization_ID; // Cambiado a Long para reflejar el tipo de dato autoincrementable
     
     //Getters and Setters
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -25,29 +25,27 @@ public class AudioVisualDTO {
         this.name = name;
     }
 
-    public String getPlatform_ID() {
+    public Long getPlatform_ID() {
         return platform_ID;
     }
 
-    public void setPlatform_ID(String platform_ID) {
+    public void setPlatform_ID(Long platform_ID) {
         this.platform_ID = platform_ID;
     }
 
-    public String getGender_ID() {
+    public Long getGender_ID() {
         return gender_ID;
     }
 
-    public void setGender_ID(String gender_ID) {
+    public void setGender_ID(Long gender_ID) {
         this.gender_ID = gender_ID;
     }
 
-    public String getStateVisualization_ID() {
+    public Long getStateVisualization_ID() {
         return stateVisualization_ID;
     }
 
-    public void setStateVisualization_ID(String stateVisualization_ID) {
+    public void setStateVisualization_ID(Long stateVisualization_ID) {
         this.stateVisualization_ID = stateVisualization_ID;
     }
-    
-
 }

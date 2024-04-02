@@ -2,18 +2,18 @@ package com.example.FiltroSpringBoot.Persistence.DTO;
 
 public class CostumerDTO {
 
-    private String id;
+    private Long id; // Cambiado a Long para reflejar el tipo de dato autoincrementable
     private String firstName;
     private String secondName;
     private String firstLastName;
     private String secondLastName;
     
-    //Getters and Setters
-    public String getId() {
+    // Getters y Setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -48,6 +48,4 @@ public class CostumerDTO {
     public void setSecondLastName(String secondLastName) {
         this.secondLastName = secondLastName;
     }
-    
-
 }

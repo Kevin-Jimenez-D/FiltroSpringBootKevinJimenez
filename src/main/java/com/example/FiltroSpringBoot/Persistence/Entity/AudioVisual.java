@@ -15,12 +15,11 @@ public class AudioVisual {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id; // Cambiado a Long para reflejar el tipo de dato autoincrementable
 
     @Column(name = "name", nullable = false)
     private String name;
 
-    //3 llaves foraneas
     @ManyToOne
     @JoinColumn(name = "platform_ID")
     @JsonIgnore
@@ -36,11 +35,9 @@ public class AudioVisual {
     @JsonIgnore
     private StateVisualization stateVisualization;
 
-    //Es llave foránea en otra tabla
     @OneToMany(mappedBy = "audioVisual", cascade = CascadeType.ALL)
     private List<Register> registers;
 
-    //Relacion muchos a muchos
     @JoinTable(
         name = "CostumerAudioVisual",
         joinColumns = @JoinColumn(name = "audioVisual_ID",nullable = false),
@@ -49,22 +46,19 @@ public class AudioVisual {
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Costumer> costumers;
 
-    //Metodo para añadir cliente
     public void addCustomer(Costumer costumer){
         if (this.costumers == null) {
             this.costumers = new ArrayList<>();
+        }
+
+        this.costumers.add(costumer);
     }
 
-    this.costumers.add(costumer);
-    }
-    
-    //Getters y Setters
-
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -115,16 +109,12 @@ public class AudioVisual {
     public void setCostumers(List<Costumer> costumers) {
         this.costumers = costumers;
     }
-    
-    //ToString
+
     @Override
     public String toString() {
         return "AudioVisual{" + "id=" + id + ", name=" + name + ", platform=" + platform + ", gender=" + gender + ", stateVisualization=" + stateVisualization + ", registers=" + registers + ", costumers=" + costumers + '}';
     }
 
-    //DTO es la forma en que queremos mostrar las cosas
-    //Las llaves foraneas son las que tienen null
-    //DTO
     public AudioVisualDTO toDTO(){
         AudioVisualDTO audioVisualDTO = new AudioVisualDTO();
         audioVisualDTO.setId(this.id);
@@ -134,6 +124,4 @@ public class AudioVisual {
         audioVisualDTO.setStateVisualization_ID(this.stateVisualization.getId());
         return audioVisualDTO;
     }
-    
-
 }

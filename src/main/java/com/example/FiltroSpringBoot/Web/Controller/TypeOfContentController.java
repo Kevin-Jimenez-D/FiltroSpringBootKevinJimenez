@@ -4,14 +4,14 @@ import java.util.List;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.FiltroSpringBoot.Domain.Service.TypeOfContentService;
 import com.example.FiltroSpringBoot.Persistence.DTO.TypeOfContentDTO;
 import com.example.FiltroSpringBoot.Persistence.Entity.TypeOfContent;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
@@ -30,8 +30,9 @@ public class TypeOfContentController {
     }
 
     @PostMapping("/save")
-    public void saveTypeOfContent(@RequestBody TypeOfContent typeOfContent) {
-        typeOfContentService.saveTypeOfContent(typeOfContent);
+    public ResponseEntity<TypeOfContent> saveTypeOfContent(@RequestBody TypeOfContent typeOfContent) {
+        ResponseEntity<TypeOfContent> responseEntity = typeOfContentService.saveTypeOfContent(typeOfContent);
+        return ResponseEntity.status(HttpStatus.CREATED).body(responseEntity.getBody());
     }
     
 

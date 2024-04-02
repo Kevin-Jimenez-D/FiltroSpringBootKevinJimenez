@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.example.FiltroSpringBoot.Persistence.Entity.Register;
 
 @Repository
-public interface RegisterRepository extends JpaRepository<Register, String> {
+public interface RegisterRepository extends JpaRepository<Register, Long> {
 
     //Save if stateVisualization_ID is finished or abandoned
 

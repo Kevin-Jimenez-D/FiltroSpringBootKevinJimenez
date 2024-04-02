@@ -13,7 +13,7 @@ public class Costumer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     @Column(name = "firstName", nullable = false)
     private String firstName;
@@ -27,16 +27,15 @@ public class Costumer {
     @Column(name = "secondLastName")
     private String secondLastName;
 
-    //Relacion muchos a muchos
     @ManyToMany(mappedBy = "costumers")
     private List<AudioVisual> audioVisuals;
     
-    //Getters y Setters
-    public String getId() {
+    // Getters y Setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -80,13 +79,13 @@ public class Costumer {
         this.audioVisuals = audioVisuals;
     }
     
-    //ToString
+    // ToString
     @Override
     public String toString() {
         return "Costumer{" + "id=" + id + ", firstName=" + firstName + ", secondName=" + secondName + ", firstLastName=" + firstLastName + ", secondLastName=" + secondLastName + ", audioVisuals=" + audioVisuals + '}';
     }
 
-    //DTO
+    // DTO
     public CostumerDTO toDTO(){
         CostumerDTO costumerDTO = new CostumerDTO();
         costumerDTO.setId(this.id);
@@ -96,7 +95,4 @@ public class Costumer {
         costumerDTO.setSecondLastName(this.secondLastName);
         return costumerDTO;
     }
-    
-    
-
 }

@@ -12,7 +12,7 @@ public class Register {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     @Column(name = "qualification", nullable = false, precision = 1)
     private Double qualification;
@@ -20,18 +20,17 @@ public class Register {
     @Column(name = "comment", nullable = false, length = 500)
     private String comment;
 
-    //Llave foránea
     @ManyToOne
     @JoinColumn(name = "audiovisual_ID")
     @JsonIgnore
     private AudioVisual audioVisual;
     
-    //Getters and Setters
-    public String getId() {
+    // Getters y Setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -59,18 +58,19 @@ public class Register {
         this.audioVisual = audioVisual;
     }
     
-    //ToString
+    // ToString
     @Override
     public String toString() {
         return "Register{" + "id=" + id + ", qualification=" + qualification + ", comment=" + comment + ", audioVisual=" + audioVisual + '}';
     }
     
-    //DTO
+    // DTO
     public RegisterDTO toDTO(){
         RegisterDTO registerDTO = new RegisterDTO();
         registerDTO.setId(this.id);
         registerDTO.setQualification(this.qualification);
         registerDTO.setComment(this.comment);
+        registerDTO.setAudioVisual_ID(this.audioVisual.getId());
         return registerDTO;
     }
 

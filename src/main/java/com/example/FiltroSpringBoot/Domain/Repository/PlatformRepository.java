@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.example.FiltroSpringBoot.Persistence.Entity.Platform;
 
 @Repository
-public interface PlatformRepository extends JpaRepository<Platform, String> {
+public interface PlatformRepository extends JpaRepository<Platform, Long> {
 
     //Save depends of typeOfContent, Select
 

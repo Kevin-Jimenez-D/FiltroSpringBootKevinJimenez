@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.example.FiltroSpringBoot.Persistence.Entity.Costumer;
 
 @Repository
-public interface CostumerRepository extends JpaRepository<Costumer, String> {
+public interface CostumerRepository extends JpaRepository<Costumer, Long> {
 
     //CRUD, Select by propierties in all tables
 

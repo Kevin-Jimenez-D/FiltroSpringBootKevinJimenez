@@ -2,15 +2,15 @@ package com.example.FiltroSpringBoot.Persistence.DTO;
 
 public class TypeOfContentDTO {
 
-    private String id;
+    private Long id; // Cambiando el tipo de dato de la ID a Long
     private String name;
-    
-    //Getters and Setters
-    public String getId() {
+
+    // Getters y Setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -21,6 +21,4 @@ public class TypeOfContentDTO {
     public void setName(String name) {
         this.name = name;
     }
-    
-
 }

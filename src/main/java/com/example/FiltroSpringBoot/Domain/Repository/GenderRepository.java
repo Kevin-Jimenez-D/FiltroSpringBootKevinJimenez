@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.example.FiltroSpringBoot.Persistence.Entity.Gender;
 
 @Repository
-public interface GenderRepository extends JpaRepository<Gender, String> {
+public interface GenderRepository extends JpaRepository<Gender, Long> {
 
     //Save, Select
 

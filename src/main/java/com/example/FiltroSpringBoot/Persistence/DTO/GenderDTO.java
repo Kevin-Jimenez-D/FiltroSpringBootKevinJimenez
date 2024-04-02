@@ -2,15 +2,15 @@ package com.example.FiltroSpringBoot.Persistence.DTO;
 
 public class GenderDTO {
 
-    private String id;
+    private Long id; // Cambiado a Long para reflejar el tipo de dato autoincrementable
     private String gender;
     
-    //Getters and Setters
-    public String getId() {
+    // Getters y Setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -21,6 +21,4 @@ public class GenderDTO {
     public void setGender(String gender) {
         this.gender = gender;
     }
-    
-
 }

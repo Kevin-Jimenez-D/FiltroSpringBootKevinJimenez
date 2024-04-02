@@ -14,27 +14,25 @@ public class Platform {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     @Column(name = "name", nullable = false)
     private String name;
 
-    //Si en una tabla, hay llaves foráneas, trae un objeto y es @ManyToOne name = es el nombre en la base de datos
     @ManyToOne
     @JoinColumn(name = "typeOfContent_ID")
     @JsonIgnore
     private TypeOfContent typeOfContent;
 
-    //Llave foránea en otra tabla
     @OneToMany(mappedBy = "platform", cascade = CascadeType.ALL)
     private List<AudioVisual> audioVisuals;
     
-    //Getters y Setters
-    public String getId() {
+    // Getters y Setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -62,19 +60,18 @@ public class Platform {
         this.audioVisuals = audioVisuals;
     }
     
-    //ToString
+    // ToString
     @Override
     public String toString() {
         return "Platform{" + "id=" + id + ", name=" + name + ", typeOfContent=" + typeOfContent + ", audioVisuals=" + audioVisuals + '}';
     }
     
-    //DTO
+    // DTO
     public PlatformDTO toDTO(){
         PlatformDTO platformDTO = new PlatformDTO();
         platformDTO.setId(this.id);
         platformDTO.setName(this.name);
+        platformDTO.setTypeOfContent_ID(this.typeOfContent.getId());
         return platformDTO;
     }
-    
-
 }

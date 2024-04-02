@@ -12,8 +12,8 @@ import jakarta.persistence.*;
 public class TypeOfContent {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Utilizando GenerationType.IDENTITY para generar automáticamente las IDs
+    private Long id; // Cambiando el tipo de dato de la ID a Long
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -23,11 +23,11 @@ public class TypeOfContent {
     private List<Platform> platforms;
     
     //Getters and Setters
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -56,7 +56,7 @@ public class TypeOfContent {
     //DTO
     public TypeOfContentDTO toDTO(){
         TypeOfContentDTO typeOfContentDTO = new TypeOfContentDTO();
-        typeOfContentDTO.setId(this.id);
+        typeOfContentDTO.setId(this.id); // No se necesita convertir a String
         typeOfContentDTO.setName(this.name);
         return typeOfContentDTO;
     }

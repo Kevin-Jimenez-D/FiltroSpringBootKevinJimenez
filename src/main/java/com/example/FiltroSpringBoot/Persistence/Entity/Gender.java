@@ -13,21 +13,20 @@ public class Gender {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     @Column(name = "gender", nullable = false)
     private String gender;
 
-    //Llave foranea a otra tabla
     @OneToMany(mappedBy = "gender", cascade = CascadeType.ALL)
     private List<AudioVisual> audioVisuals;
     
-    //Getters y Setters
-    public String getId() {
+    // Getters y Setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -47,20 +46,17 @@ public class Gender {
         this.audioVisuals = audioVisuals;
     }
     
-    //ToString
+    // ToString
     @Override
     public String toString() {
         return "Gender{" + "id=" + id + ", gender=" + gender + ", audioVisuals=" + audioVisuals + '}';
     }
 
-    //DTO
+    // DTO
     public GenderDTO toDTO(){
         GenderDTO genderDTO = new GenderDTO();
         genderDTO.setId(this.id);
         genderDTO.setGender(this.gender);
         return genderDTO;
-    }
-    
-    
-
+    } 
 }

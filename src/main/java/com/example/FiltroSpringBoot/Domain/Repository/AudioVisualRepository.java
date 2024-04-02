@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AudioVisualRepository extends JpaRepository<AudioVisual, String> {
+public interface AudioVisualRepository extends JpaRepository<AudioVisual, Long> {
 
     //CRUD
 

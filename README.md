@@ -17,6 +17,10 @@ The project will utilize the following technologies in Backend:
 ## Database Design
 ![Database Design](/src/main/resources/imagesDocumentation/DataBaseImage.png)
 
+### Remember to change user and password if you are going to see the API in Campus, and to work with Swagger
+
+![ApplicationPropierties](/src/main/resources/imagesDocumentation/AplicationPropierties.png)
+
 ## Folder organization
 
 ![Folder Organization](/src/main/resources/imagesDocumentation/FolderOrganization.png)

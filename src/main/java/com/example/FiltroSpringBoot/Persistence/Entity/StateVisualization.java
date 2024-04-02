@@ -13,21 +13,20 @@ public class StateVisualization {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     @Column(name = "stateVisualization", nullable = false)
     private String stateVisualization;
 
-    //Llave foránea a otra tabla
     @OneToMany(mappedBy = "stateVisualization", cascade = CascadeType.ALL)
     private List<AudioVisual> audioVisuals;
     
-    //Getters and Setters
-    public String getId() {
+    // Getters y Setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -47,13 +46,13 @@ public class StateVisualization {
         this.audioVisuals = audioVisuals;
     }
     
-    //ToString
+    // ToString
     @Override
     public String toString() {
         return "StateVisualization{" + "id=" + id + ", stateVisualization=" + stateVisualization + ", audioVisuals=" + audioVisuals + '}';
     }
     
-    //DTO
+    // DTO
     public StateVisualizationDTO toDTO(){
         StateVisualizationDTO stateVisualizationDTO = new StateVisualizationDTO();
         stateVisualizationDTO.setId(this.id);

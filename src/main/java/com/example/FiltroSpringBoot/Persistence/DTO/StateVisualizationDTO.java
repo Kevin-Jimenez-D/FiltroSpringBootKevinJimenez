@@ -2,15 +2,15 @@ package com.example.FiltroSpringBoot.Persistence.DTO;
 
 public class StateVisualizationDTO {
 
-    private String id;
+    private Long id; // Cambiado a Long para reflejar el tipo de dato autoincrementable
     private String stateVisualization;
     
-    //Getters and Setter
-    public String getId() {
+    // Getters y Setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -21,6 +21,4 @@ public class StateVisualizationDTO {
     public void setStateVisualization(String stateVisualization) {
         this.stateVisualization = stateVisualization;
     }
-    
-
 }

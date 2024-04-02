@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.example.FiltroSpringBoot.Persistence.Entity.StateVisualization;
 
 @Repository
-public interface StateVisualizationRepository extends JpaRepository<StateVisualization, String> {
+public interface StateVisualizationRepository extends JpaRepository<StateVisualization, Long> {
 
 }

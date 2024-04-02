@@ -2,17 +2,17 @@ package com.example.FiltroSpringBoot.Persistence.DTO;
 
 public class RegisterDTO {
 
-    private String id;
+    private Long id; // Cambiado a Long para reflejar el tipo de dato autoincrementable
     private Double qualification;
     private String comment;
-    private String audioVisual_ID;
+    private Long audioVisual_ID; // Cambiado a Long para reflejar el tipo de dato autoincrementable
     
-    //Getters and Setters
-    public String getId() {
+    // Getters y Setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -32,13 +32,11 @@ public class RegisterDTO {
         this.comment = comment;
     }
 
-    public String getAudioVisual_ID() {
+    public Long getAudioVisual_ID() {
         return audioVisual_ID;
     }
 
-    public void setAudioVisual_ID(String audioVisual_ID) {
+    public void setAudioVisual_ID(Long audioVisual_ID) {
         this.audioVisual_ID = audioVisual_ID;
     }
-    
-
 }
