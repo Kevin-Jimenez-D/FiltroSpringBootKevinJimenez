@@ -129,6 +129,26 @@ The next step is copy the ```token```, with data, you can access to the api
 
 ![Get Data with Web Token](/src/main/resources/imagesDocumentation/GetTypeOfData.png)
 
+## Swagger
+
+- Enter with the next URL
+
+   ```
+   http://localhost:8080/doc/swagger-ui/index.html
+   ```
+
+- Configure the Swagger with the correct route
+
+![Configure the Swagger](/src/main/resources/imagesDocumentation/ConfigSwagger.png)
+
+- Authorize Swagger With the Web Token
+
+![Authorize Swagger with Web Token](/src/main/resources/imagesDocumentation/AuthorizeSwagger.png)
+
+- And you can see the endpoints with Swagger
+
+![Swagger view](/src/main/resources/imagesDocumentation/SwaggerView.png)
+
 # API endpoints
 
 ## With Insomnia
