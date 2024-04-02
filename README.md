@@ -97,52 +97,35 @@ The project will utilize the following technologies in Backend:
 
 ![Folder Organization](/src/main/resources/imagesDocumentation/FolderOrganization.png)
 
-## Queries in MySQL for specify table
-
-<details>
-   <summary>Table 1</summary>
-
-   1. Query 1
-
-   ```sql
-   #Query here
-   ```
-
-   2. Query 2
-
-   ```sql
-   #Query here
-   ```
-
-</details>
-
-<details>
-   <summary>Table 2</summary>
-
-   1. Query 1
-
-   ```sql
-   #Query here
-   ```
-
-   2. Query 2
-
-   ```sql
-   #Query here
-   ```
-
-</details>
-
-## Class Diagram
-![Image Class Diagram](/src/main/resources/imagesDocumentation/)
-[Link Class Diagram](https://drive.google.com/file/d/1yUEvqN2FR11HFvS9v3SN6CfLrC8hgQ5e/view?usp=sharing)
-
 ## Security
+
+### Register
+
+- First, you need to register with the next url:
+
+   ```
+   localhost:8080/register
+   ```
+
+In queries, you add the parameteters ```user``` and ```encryptedPass``` with data.
+
 ![Register and create the Web Token](/src/main/resources/imagesDocumentation/RegisterSecurity.png)
+
+### Login
+
+- With the same data in ```user``` and ```encryptedPass```, you can login in the next url:
+
+   ```
+   localhost:8080/login
+   ```
+
+The next step is copy the ```token```, with data, you can access to the api
 
 ![Login and create the Web Token](/src/main/resources/imagesDocumentation/LoginSecurity.png)
 
-![Save TypeOfData the Web Token](/src/main/resources/imagesDocumentation/SaveTypeOfData.png)
+### Access with Token
+
+- In headers, you add ```Authorization``` and paste the token, so you will have access to the methods https
 
 ![Get Data with Web Token](/src/main/resources/imagesDocumentation/GetTypeOfData.png)
 
@@ -150,23 +133,43 @@ The project will utilize the following technologies in Backend:
 
 ## With Insomnia
 
-- If you want to watch my page, in that Url:
-
-   ```
-   http://localhost:8080/filter
-   ```
-
 These endpoints allow you to handle Stripe subscriptions for Publish and Analyze.
 
 ## GET
-`official client only` [/1/billing/retrieve-billing-data.json](#get-1billingretrieve-billing-datajson) <br/>
+`GetTypeOfContent` [localhost:8080/typeOfContent](#get-1billingretrieve-billing-datajson) 
+
+`GetTypeOfContentByName` [localhost:8080/typeOfContent/serie](#get-1billingretrieve-billing-datajson) 
+
+`GetGender` [localhost:8080/genders](#get-1billingretrieve-billing-datajson) 
+
+`GetStateVisualizationAll` [localhost:8080/stateVisualizations](#get-1billingretrieve-billing-datajson)
+
+`GetStateVisualizationById` [localhost:8080/stateVisualizations/5](#get-1billingretrieve-billing-datajson)
+
+`GetAllCostumer` [localhost:8080/costumers](#get-1billingretrieve-billing-datajson)
+
+`GetCostumerById` [localhost:8080/costumers/1](#get-1billingretrieve-billing-datajson)
+
+`GetAllPlatforms` [localhost:8080/platforms](#get-1billingretrieve-billing-datajson)
+    <br/>
 
 ## POST
-`official client only` [/1/billing/start-trial.json](#post-1billingstart-trialjson) <br/>
-`official client only` [/1/billing/cancel-trial.json](#post-1billingcancel-trialjson) <br/>
-`official client only` [/1/billing/start-or-update-subscription.json](#post-1billingstart-or-update-subscriptionjson) <br/>
-`official client only` [/1/billing/cancel-subscription.json](#post-1billingcancel-subscriptionjson) <br/>
+`Register` [localhost:8080/register](#post-1billingstart-trialjson) <br/>
+`Login` [localhost:8080/login](#post-1billingcancel-trialjson) <br/>
+`SaveTypeOfContent` [localhost:8080/typeOfContent/save](#post-1billingstart-or-update-subscriptionjson) <br/>
+`SaveGener` [localhost:8080/genders/save](#post-1billingcancel-subscriptionjson) <br/>
+`SaveStateVisualization` [localhost:8080/stateVisualizations/save](#post-1billingstart-trialjson) <br/>
+`SaveCostumer` [localhost:8080/costumers/save](#post-1billingcancel-trialjson) <br/>
+`SavePlatform` [localhost:8080/platforms/save](#post-1billingstart-or-update-subscriptionjson) <br/>
 ___
+
+## PUT
+`PutStateVisualizationById` [localhost:8080/stateVisualizations/5](#put-1billingstart-trialjson) <br/>
+`PutCostumerById` [localhost:8080/costumers/1](#put-1billingcancel-trialjson) <br/>
+
+## DELETE
+
+`DeleteCostumerById` [localhost:8080/costumers/1](#put-1billingcancel-trialjson) <br/>
 
 ### GET /1/billing/retrieve-billing-data.json
 Get basics billing data for the current user or for a given organization ID (as long as the current user is part of that organization). (it has been poorly implemented for now to unblock the Analyze team, and should only be used by Analyze) `official client only`
